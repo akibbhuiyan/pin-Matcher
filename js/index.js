@@ -24,6 +24,9 @@ function verifyPin() {
     const typedNumber = document.getElementById('typedNumber').value;
     const succesMsg = document.getElementById('succesMsg')
     const failError = document.getElementById('failError');
+    const tryLeft = document.getElementById('tryLeft').innerText;
+    const tryLeftNumber = parseInt(tryLeft);
+   
 
     if (pin == typedNumber ) {
         succesMsg.style.display = 'block';
@@ -31,6 +34,11 @@ function verifyPin() {
     } else {
         failError.style.display = 'block';
         succesMsg.style.display = 'none';
+        
+        if (tryLeft >0 && tryLeft <4) {
+            document.getElementById('tryLeft').innerText = tryLeft - 1;
+        } 
+
     }
 }
 
